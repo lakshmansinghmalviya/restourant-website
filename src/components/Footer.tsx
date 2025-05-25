@@ -73,17 +73,18 @@ const Footer: React.FC = () => {
             <div className="space-y-4 text-sm">
               <div>
                 <p className="text-gray-400 mb-1">Call us</p>
-                <p className="text-white font-medium">T 044 123 4559</p>
+                <p className="text-white font-medium">T +496107 4078377</p>
               </div>
               <div>
                 <p className="text-gray-400 mb-1">Email</p>
-                <p className="text-white font-medium">info@easystreet.com</p>
+                <p className="text-white font-medium">info@Garcias-Kitchen.de</p>
               </div>
               <div>
                 <p className="text-gray-400 mb-1">Address</p>
                 <p className="text-white font-medium">
-                  Raymond Boulevard 224,<br />
-                  New York
+                  Herbert-Heckmann Anlage 1
+                  65451 Kelsterbach<br />
+                  Germany
                 </p>
               </div>
             </div>

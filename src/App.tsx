@@ -5,7 +5,7 @@ import About from "./components/About";
 import Menu from "./components/MenuPage/Menu";
 import Blogs from "./components/Blogs";
 import Forms from "./components/Forms";
-
+import Events from "./components/Private Events/Index"
 
 export default function App() {
   const [showButton, setShowButton] = useState(false);
@@ -32,8 +32,9 @@ export default function App() {
       <Routes>
         <Route path="/home" element={<Navigate to="/" replace />} />
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/about" element={<About />} />
         <Route path="/pages" element={<Blogs />} />
         <Route path="/user" element={<Forms />} />
       </Routes>

@@ -10,15 +10,20 @@ import OurStory from "./components/OurStory"
 import CategoryMenu from "./components/CategoryMenu"
 import BookTable from "./components/BookTable"
 
+import WeeklyDelights from './components/Weekly Delights/Index'
+import BestSellers from './components/Chef Bestsellers/Index'
+
 export default function Home() {
   return (
     <>
     <Hero/>
-    <Menu/>
+    <WeeklyDelights />
+    <BestSellers />
+    {/* <Menu/> */}
     <ChatbotComponent />
-    <Testimonals/>
     <Blogs/>
     <BookTable/>
+    <Testimonals/>
     <CategoryMenu/>
     <OurStory/>
     <Achievements/>
