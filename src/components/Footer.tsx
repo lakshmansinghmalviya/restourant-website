@@ -20,13 +20,13 @@ const Footer: React.FC = () => {
   };
 
   const openingHours: OpeningHour[] = [
-    { day: 'MONDAY', hours: '9:00 - 22:00' },
-    { day: 'TUESDAY', hours: '9:00 - 22:00' },
-    { day: 'WEDNESDAY', hours: '9:00 - 22:00' },
-    { day: 'THURSDAY', hours: '9:00 - 22:00' },
-    { day: 'FRIDAY', hours: '9:00 - 22:00' },
-    { day: 'SATURDAY', hours: '9:00 - 22:00' },
-    { day: 'SUNDAY', hours: 'CLOSED' }
+    { day: 'MONDAY', hours: 'CLOSED' },
+    { day: 'TUESDAY', hours: '12:00 - 10:00 PM' },
+    { day: 'WEDNESDAY', hours: '12:00 - 10:00 PM' },
+    { day: 'THURSDAY', hours: '12:00 - 10:00 PM' },
+    { day: 'FRIDAY', hours: '12:00 - 10:00 PM' },
+    { day: 'SATURDAY', hours: '05:00 - 10:00 PM' },
+    { day: 'SUNDAY', hours: '05:00 - 10:00 PM' }
   ];
 
   return (
@@ -102,12 +102,12 @@ const Footer: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="YOUR EMAIL"
-                  className="flex-1 bg-gray-800 text-white px-4 py-3 text-sm border border-gray-700 focus:border-orange-500 focus:outline-none transition-colors duration-300"
+                  className="flex-1 bg-gray-800 text-white py-3 text-sm border border-gray-700 focus:border-orange-500 focus:outline-none transition-colors duration-300"
                   required
                 />
                 <button
                   type="submit"
-                  className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 transition-colors duration-300 font-medium"
+                  className="bg-orange-500 hover:bg-orange-600 text-white px-2 py-3 transition-colors duration-300 font-medium"
                 >
                   →
                 </button>

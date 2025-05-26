@@ -1,9 +1,16 @@
 import aboutimg from "../assets/aboutimg.svg";
 import Testimonals from "./Testimonals";
+import OurStory from "./OurStory";
+import Achievements from "./Achievements";
+import MeetOurTeam  from "./MeetOurTeam";
+
 const About = () => {
   return (
     <>
-    <div className="flex flex-wrap gap-10 m-10 ">
+    <OurStory/>
+    <Achievements/>
+    <MeetOurTeam/>
+    {/* <div className="flex flex-wrap gap-10 m-10 ">
       <img src={aboutimg} alt="aboutimg" className=" lg-device:max-w-[50%] " />
       <div className="mobile:w-[100%] mobile:text-justify mobile:mx-0 lg-device:max-w-[40%]">
         <h1 className="mb-4 text-3xl font-playfair">We provide healthy food for your family.</h1>
@@ -11,7 +18,7 @@ const About = () => {
         <p className="text-base">At Foodzy, we believe that dining is not just about food, but also about the overall experience. Our staff, renowned for their warmth and dedication, strives to make every visit an unforgettable event.</p>
       </div>
     </div>
-    <Testimonals/>
+    <Testimonals/> */}
     </>
   );
 };

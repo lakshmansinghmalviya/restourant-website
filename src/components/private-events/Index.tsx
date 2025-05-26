@@ -31,15 +31,8 @@ const Header = () => {
 export default function Index() {
   return (
     <div className="text-white bg-red-800 flex flex-col gap-10 px-8 py-3">
-      {/* Navbar */}
-      <div className="flex justify-around items-center">
-        <Header />
-
-        <button className="px-5 py-2 border border-white rounded-full">BOOK A TABLE</button>
-      </div>
-
+      {/* Navbar */} 
       <BookEvent />
-
       <Gallery />
     </div>
   )

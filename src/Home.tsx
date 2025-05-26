@@ -10,24 +10,33 @@ import OurStory from "./components/OurStory"
 import CategoryMenu from "./components/CategoryMenu"
 import BookTable from "./components/BookTable"
 
-import WeeklyDelights from './components/Weekly Delights/Index'
-import BestSellers from './components/Chef Bestsellers/Index'
+import WeeklyDelights from './components/weekly-delights/Index'
+import BestSellers from './components/chef-best-sellers/Index'
+import PrivateEvents from './components/private-events/Index'
+import DrinkAndEnjoy from './components/DrinkAndEnjoy'
+import AllFoodNamesWithImages from './components/AllFoodNamesWithImages'
+import RestaurantHeroCarousel from './components/RestaurantHeroCarousel'
+
 
 export default function Home() {
   return (
     <>
     <Hero/>
+    <RestaurantHeroCarousel/>
     <WeeklyDelights />
-    <BestSellers />
+    {/* <BestSellers /> */}
     {/* <Menu/> */}
-    <ChatbotComponent />
-    <Blogs/>
+    {/* <ChatbotComponent /> */}
+    {/* <Blogs/> */}
+    {/* <AllFoodNamesWithImages/> */}
+    <DrinkAndEnjoy/>
+    {/* <PrivateEvents/> */}
     <BookTable/>
     <Testimonals/>
     <CategoryMenu/>
-    <OurStory/>
-    <Achievements/>
-    <MeetOurTeam/>
+    {/* <OurStory/> */}
+    {/* <Achievements/> */}
+    {/* <MeetOurTeam/> */}
     <MeetChefs/>
     </>
   )

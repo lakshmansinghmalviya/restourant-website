@@ -15,7 +15,7 @@ function AppWithHeaderControl() {
 
   return (
     <>
-      {!shouldHideHeader && <Header />}
+      <Header />
       <App />
       <Footer />
     </>
