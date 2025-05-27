@@ -9,8 +9,7 @@ import {
   Instagram,
   Calendar
 } from 'lucide-react';
-
-const ResponsiveHeader = () => {
+ const ResponsiveHeader = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -39,15 +38,15 @@ const ResponsiveHeader = () => {
   };
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Menu', href: '#menu' },
-    { label: 'Special', href: '#special' }
+    { label: 'Home', href: '/' },
+    { label: 'Menu', href: '/menu' },
+    { label: 'Special', href: '/special' }
   ];
 
   const rightNavItems = [
-    { label: 'Private Events', href: '#events' },
-    { label: 'About Us', href: '#about' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Private Events', href: '/events' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Contact', href: '/contact' }
   ];
 
   return (
@@ -86,10 +85,15 @@ const ResponsiveHeader = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4 lg:py-6">
             
-            {/* Empty div for mobile to maintain flex layout */}
-            <div className="lg:hidden w-8"></div>
+            {/* Logo - Left on mobile, centered on desktop */}
+            <div className="lg:absolute lg:top-[70px] lg:left-1/2 lg:transform lg:-translate-x-1/2 ">
+              <div className="w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full border-2 border-red-0 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="/logo2.png"/>
+                {/* <div className="text-red-600 font-bold text-lg lg:text-xl">G</div> */}
+              </div>
+            </div>
 
-            {/* Left Navigation - Desktop */}
+            {/* Left Navigation - Desktop only */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 <a
@@ -101,13 +105,6 @@ const ResponsiveHeader = () => {
                 </a>
               ))}
             </nav>
-
-            {/* Logo - Always centered */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 lg:static lg:transform-none">
-              <div className="w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full border-2 border-red-600 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="text-red-600 font-bold text-lg lg:text-xl">G</div>
-              </div>
-            </div>
 
             {/* Right Navigation - Desktop */}
             <div className="hidden lg:flex items-center space-x-8">
@@ -211,36 +208,12 @@ const ResponsiveHeader = () => {
   );
 };
 
-// Demo content to show scroll behavior
-const DemoContent = () => (
-  <div className="pt-32 lg:pt-40">
-    <div className="max-w-4xl mx-auto px-4 py-20">
-      <h1 className="text-4xl lg:text-6xl font-bold text-white text-center mb-8">
-        Welcome to Garcia's Kitchen
-      </h1>
-      <p className="text-xl text-gray-300 text-center mb-12">
-        Experience authentic flavors in the heart of Germany
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[1, 2, 3, 4, 5, 6].map((i) => (
-          <div key={i} className="bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-xl font-semibold text-white mb-4">Sample Content {i}</h3>
-            <p className="text-gray-300">
-              This is sample content to demonstrate the responsive header behavior. 
-              Scroll up and down to see the header effects.
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-);
+ export default ResponsiveHeader;
 
-export default function App() {
-  return (
-    <div className="min-h-screen bg-black">
-      <ResponsiveHeader />
-      <DemoContent />
-    </div>
-  );
-}
+// export default function App() {
+//   return (
+//     <div className="min-h-screen bg-black">
+//       <ResponsiveHeader /> 
+//     </div>
+//   );
+// }
