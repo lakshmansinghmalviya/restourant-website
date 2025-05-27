@@ -42,9 +42,9 @@ const Testimonials = () => {
         if (typeof window !== 'undefined') {
             if (window.innerWidth < 640) return 1; // Mobile
             if (window.innerWidth < 1024) return 2; // Tablet
-            return 3; // Desktop
+            return 2; // Desktop
         }
-        return 3;
+        return 2;
     };
 
     const [reviewsPerPage, setReviewsPerPage] = useState(getReviewsPerPage());
@@ -84,7 +84,7 @@ const Testimonials = () => {
             </div>
 
             <div className="w-full">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-6 sm:mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-6 sm:mb-8">
                     {visibleReviews.map((review, index) => {
                         return (
                             <div key={index} className="bg-gray-900 w-full min-h-[16rem] sm:min-h-[18rem] lg:min-h-[20rem] flex flex-col gap-3 p-4 sm:p-5 rounded-xl">
@@ -93,7 +93,7 @@ const Testimonials = () => {
                                     {review.img && <img src={review.img} alt="user image" className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" />}
 
                                     <div className="flex flex-col gap-1">
-                                        <p className="text-lg sm:text-xl lg:text-2xl font-medium">{review.name}</p>
+                                        <p className="text-sm sm:text-md lg:text-md font-medium">{review.name}</p>
                                         <p className="text-xs sm:text-sm text-red-600">
                                             {review.account ? review.account : 'VISITOR'}
                                         </p>

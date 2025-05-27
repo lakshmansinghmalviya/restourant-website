@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Home";
-import About from "./components/About";
-import Menu from "./components/MenuPage/Menu";
-import Blogs from "./components/Blogs";
-import Forms from "./components/Forms";
+import About from "./components/About"; 
 import Special from "./components/Special";
 import Events from "./components/private-events/Index"
 
@@ -33,15 +30,15 @@ export default function App() {
       <Routes>
         <Route path="/home" element={<Navigate to="/" replace />} />
         <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
+        {/* <Route path="/menu" element={<Menu />} /> */}
         <Route path="/events" element={<Events />} />
         <Route path="/about" element={<About />} />
-        <Route path="/pages" element={<Blogs />} />
-        <Route path="/user" element={<Forms />} />
+        {/* <Route path="/pages" element={<Blogs />} /> */}
+        {/* <Route path="/user" element={<Forms />} /> */}
         <Route path="/special" element={<Special />} />
       </Routes>
 
-      {showButton && (
+      {/* {showButton && (
         <button
           onClick={scrollToTop}
           style={{
@@ -61,7 +58,7 @@ export default function App() {
         >
           ↑
         </button>
-      )}
+      )} */}
     </>
   );
 }

@@ -1,7 +1,5 @@
-import ChatbotComponent from "./components/chatbot/ChatbotComponent"
-import Blogs from "./components/Blogs"
 import Hero from "./components/Hero"
-import Menu from "./components/Menu/Menu"
+import Menu from "./components/menu/Menu"
 import Testimonals from "./components/Testimonals"
 import MeetChefs from "./components/MeetChefs"
 import MeetOurTeam from "./components/MeetOurTeam"
@@ -22,21 +20,21 @@ export default function Home() {
   return (
     <>
     <Hero/>
-    <RestaurantHeroCarousel/>
+    {/* <RestaurantHeroCarousel/> */}
     <WeeklyDelights />
     {/* <BestSellers /> */}
     {/* <Menu/> */}
     {/* <ChatbotComponent /> */}
     {/* <Blogs/> */}
-    {/* <AllFoodNamesWithImages/> */}
     <DrinkAndEnjoy/>
     {/* <PrivateEvents/> */}
-    <BookTable/>
+    {/* <BookTable/> */}
     <Testimonals/>
     <CategoryMenu/>
     {/* <OurStory/> */}
     {/* <Achievements/> */}
     {/* <MeetOurTeam/> */}
+    <AllFoodNamesWithImages/>
     <MeetChefs/>
     </>
   )

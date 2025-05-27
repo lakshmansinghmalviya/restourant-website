@@ -1,8 +1,6 @@
 import { NavLink } from "react-router-dom"
-import { nav_options } from "../Header/Header2"
-import { Fragment } from "react/jsx-runtime";
-
-import logo from "../../assets/logo.svg";
+import { nav_options } from "../header/Header"
+import { Fragment } from "react/jsx-runtime"; 
 import BookEvent from "./BookEvent";
 import Gallery from "./Gallery";
 
@@ -12,7 +10,7 @@ const Header = () => {
       return (
         <Fragment key="image-and-rest">
           {/* Insert image before rendering index 3 */}
-          <img src={logo} alt="Your Alt Text" />
+          <img src={"/logo.svg"} alt="Your Alt Text" />
           <NavLink to={option?.link || ''} className={({ isActive }) => isActive ? 'border-b border-white' : 'hover:border-b hover:border-white'}>
             {option?.name}
           </NavLink>

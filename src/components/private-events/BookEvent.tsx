@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { nav_options } from "../Header/Header2";
-import logo from "../../assets/logo.svg";
+import { nav_options } from "../header/Header"; 
 
 const EventPage = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +31,7 @@ const EventPage = () => {
       <nav className="bg-red-800 text-white px-5 py-3">
         <div className="container mx-auto flex items-center justify-between flex-wrap">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Logo" className="w-10 h-10" />
+            <img src={"/logo.svg"} alt="Logo" className="w-10 h-10" />
             <span className="text-lg font-semibold">Event Booking</span>
           </div>
 
