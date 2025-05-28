@@ -11,23 +11,23 @@ import WeeklyDelights from './components/weekly-delights/Index'
 export default function Home() {
   return (
     <>
-    <Hero/>
-    {/* <RestaurantHeroCarousel/> */}
-    <WeeklyDelights />
-    {/* <BestSellers /> */}
-    {/* <Menu/> */}
-    {/* <ChatbotComponent /> */}
-    {/* <Blogs/> */}
-    <DrinkAndEnjoy/>
-    {/* <PrivateEvents/> */}
-    {/* <BookTable/> */}
-    <Testimonals/>
-    <CategoryMenu/>
-    {/* <OurStory/> */}
-    {/* <Achievements/> */}
-    {/* <MeetOurTeam/> */}
-    <AllFoodNamesWithImages/>
-    <MeetChefs/>
+      <Hero />
+      {/* <RestaurantHeroCarousel/> */}
+      <WeeklyDelights />
+      {/* <BestSellers /> */}
+      {/* <Menu/> */}
+      {/* <ChatbotComponent /> */}
+      {/* <Blogs/> */}
+      <DrinkAndEnjoy />
+      {/* <PrivateEvents/> */}
+      {/* <BookTable/> */}
+      <CategoryMenu />
+      {/* <OurStory/> */}
+      {/* <Achievements/> */}
+      {/* <MeetOurTeam/> */}
+      <AllFoodNamesWithImages />
+      <MeetChefs />
+      <Testimonals />
     </>
   )
 }

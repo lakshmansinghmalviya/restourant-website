@@ -133,7 +133,7 @@ const Delights = () => {
 export default function Index() {
   return (
     <div className="bg-gray-50">
-      <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8 px-3 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+      <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8 px-1 sm:px-4 lg:px-6 py-4 sm:py-6 lg:py-8">
         {/* Header Section */}
         <Header />
         
