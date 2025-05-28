@@ -136,7 +136,7 @@ const ResponsiveHeader = () => {
                 className="p-2 rounded-md text-white hover:bg-gray-800 transition-colors duration-300 mobile-menu-container"
                 aria-label="Toggle mobile menu"
               >
-                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
               </button>
             </div>
           </div>

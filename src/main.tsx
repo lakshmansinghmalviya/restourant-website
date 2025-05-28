@@ -5,7 +5,7 @@ import App from './App.tsx'
 import Header from './components/header/Header.tsx'
 import HeaderMobile from './components/header/HeaderMobile.tsx'
 import './global.css'
-import Footer from './components/Footer.tsx'
+import Footer from './components/footer/Footer.tsx'
 import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 
 function AppWithHeaderControl() {

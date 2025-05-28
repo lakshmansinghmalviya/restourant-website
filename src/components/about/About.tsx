@@ -1,8 +1,8 @@
 import aboutimg from "../assets/aboutimg.svg";
-import Testimonals from "./Testimonals";
-import OurStory from "./OurStory";
-import Achievements from "./Achievements";
-import MeetOurTeam  from "./MeetOurTeam";
+import Testimonals from "../Testimonals";
+import OurStory from "../OurStory";
+import Achievements from "../achievements/Achievements";
+import MeetOurTeam  from "../MeetOurTeam";
 
 const About = () => {
   return (
