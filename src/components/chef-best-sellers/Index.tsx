@@ -23,8 +23,6 @@ export default function Index() {
   return (
     <div className="text-white bg-[#9C0F1C] flex flex-col gap-10 py-5">
       <h1 className="text-center text-2xl">Chef's Bestsellers - Dishes You Must Try</h1>
-
-
       <BestSellers />
     </div>
   )

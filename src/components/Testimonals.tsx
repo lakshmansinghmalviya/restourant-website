@@ -36,7 +36,7 @@ const Testimonials = () => {
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    
+
     // Responsive reviews per page
     const getReviewsPerPage = () => {
         if (typeof window !== 'undefined') {
@@ -119,34 +119,32 @@ const Testimonials = () => {
                 {/* Buttons */}
                 <div className="text-xs sm:text-sm flex gap-4 sm:gap-5 justify-center">
                     {/* Previous Button */}
-                    <button 
-                        onClick={handlePrev} 
-                        disabled={currentIndex === 0} 
-                        className={`flex gap-2 items-center transition-colors duration-200 ${
-                            currentIndex === 0 
-                                ? 'opacity-50 cursor-not-allowed' 
+                    <button
+                        onClick={handlePrev}
+                        disabled={currentIndex === 0}
+                        className={`flex gap-2 items-center transition-colors duration-200 ${currentIndex === 0
+                                ? 'opacity-50 cursor-not-allowed'
                                 : 'hover:text-red-400'
-                        }`}
+                            }`}
                     >
                         <FaArrowLeftLong className="w-4 h-4 sm:w-5 sm:h-5 text-red-600" />
                         <span>PREVIOUS</span>
                     </button>
 
                     {/* Next Button */}
-                    <button 
-                        onClick={handleNext} 
-                        disabled={currentIndex + reviewsPerPage >= reviews.length} 
-                        className={`flex gap-2 items-center transition-colors duration-200 ${
-                            currentIndex + reviewsPerPage >= reviews.length 
-                                ? 'opacity-50 cursor-not-allowed' 
+                    <button
+                        onClick={handleNext}
+                        disabled={currentIndex + reviewsPerPage >= reviews.length}
+                        className={`flex gap-2 items-center transition-colors duration-200 ${currentIndex + reviewsPerPage >= reviews.length
+                                ? 'opacity-50 cursor-not-allowed'
                                 : 'hover:text-red-400'
-                        }`}
+                            }`}
                     >
                         <span>NEXT</span>
                         <FaArrowRightLong className="w-4 h-4 sm:w-5 sm:h-5 text-red-600" />
                     </button>
                 </div>
-            </div>      
+            </div>
         </div>
     )
 }
@@ -156,16 +154,16 @@ const Index = () => {
     const bgImageUrl = "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80";
 
     return (
-        <section className="text-white bg-black flex flex-col lg:flex-row min-h-screen">
+        <section className="text-white bg-black flex flex-col lg:flex-row">
             {/* Background Image */}
             <div className="w-full lg:w-auto lg:flex-shrink-0">
-                <img 
-                    src={bgImageUrl} 
-                    alt="restaurant background" 
+                <img
+                    src={bgImageUrl}
+                    alt="restaurant background"
                     className="w-full h-64 sm:h-80 lg:h-full lg:w-[30rem] xl:w-[40rem] object-cover"
                 />
             </div>
-            
+
             {/* Testimonials Section */}
             <Testimonials />
         </section>

@@ -49,7 +49,7 @@ const MeetChefs: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 py-16 px-4">
+    <div className="bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 py-16 px-4">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-20 h-20 bg-orange-200/30 rounded-full blur-xl animate-pulse"></div>
         <div className="absolute top-40 right-20 w-32 h-32 bg-amber-200/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
