@@ -65,7 +65,7 @@ const MeetOurTeam: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-800 via-red-700 to-red-900 py-16 px-4 relative overflow-hidden">
+    <div className="bg-gradient-to-br from-red-800 via-red-700 to-red-900 py-16 px-4 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-10 w-32 h-32 bg-red-600/20 rounded-full blur-3xl animate-pulse"></div>

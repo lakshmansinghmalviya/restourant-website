@@ -99,7 +99,7 @@ const Achievements = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-800 via-red-700 to-red-900 py-16 px-4 relative overflow-hidden">
+    <div className="bg-gradient-to-br from-red-800 via-red-700 to-red-900 py-16 px-4 relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-20 w-40 h-40 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>

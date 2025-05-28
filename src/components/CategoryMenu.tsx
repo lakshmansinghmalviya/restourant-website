@@ -43,7 +43,7 @@ export default function DiscoverMenuSection() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-black py-16 px-4">
+    <div className="bg-gradient-to-b from-gray-900 via-slate-900 to-black py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
