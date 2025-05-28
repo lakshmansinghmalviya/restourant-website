@@ -9,7 +9,7 @@ import MenuItemDetails from "./components/menu-details/MenuItemDetails"
 export default function App() {
   const [showButton, setShowButton] = useState(false);
 
-  // Function to scroll back to the top
+  // Function to scroll back to the top  okay
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
