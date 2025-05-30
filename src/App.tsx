@@ -31,7 +31,7 @@ export default function App() {
       <Routes>
         <Route path="/home" element={<Navigate to="/" replace />} />
         <Route path="/" element={<Home />} />
-        {/* <Route path="/menu" element={<Menu />} /> */}
+        <Route path="/menu" element={<MenuItemDetails />} />
         <Route path="/events" element={<Events />} />
         <Route path="/about" element={<About />} />
         {/* <Route path="/pages" element={<Blogs />} /> */}

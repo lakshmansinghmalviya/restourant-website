@@ -5,7 +5,7 @@ const MenuItemDetails = () => {
 
   // You can fetch data using the id here
   return (
-    <div className="text-white p-4">
+    <div className="text-black p-4">
       <h1 className="text-2xl font-bold">Menu Item Details</h1>
       <p>Showing details for menu item ID: {id}</p>
     </div>

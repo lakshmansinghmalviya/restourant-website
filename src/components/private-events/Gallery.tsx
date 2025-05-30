@@ -1,86 +1,77 @@
-import image from "../../../public/chef/c1.png"
+import { useState } from "react";
+
+const imageUrls = [
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg",
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg",
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg",
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg",
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg",
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg", 
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg",
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg",
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg",
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg",
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg",
+  "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg", 
+];
+
+// Utility to chunk array into groups of 3
+const chunkArray = (arr: string[], size: number): string[][] => {
+  const chunks: string[][] = [];
+  for (let i = 0; i < arr.length; i += size) {
+    chunks.push(arr.slice(i, i + size));
+  }
+  return chunks;
+};
 
 const Header = () => {
   return (
-    <div className="flex flex-col items-center gap-5">
-      <h1 className="text-3xl">Private Events Gallery</h1>
-
-      <p>EXPLORE OUR UNIQUE SPACES FOR YOUR SPECIAL OCCASIONS</p>
+    <div className="flex flex-col items-center gap-5 text-white">
+      <h1 className="text-3xl font-bold">Private Events Gallery</h1>
+      <p className="text-center ">
+        Explore our unique spaces for your special occasions
+      </p>
     </div>
-  )
-}
+  );
+};
 
 const Pictures = () => {
-  const images = [
-    image,
-    image,
-    image,
-    image,
-    image,
-    image,
-  ];
+  const chunks = chunkArray(imageUrls, 3);
+  const [clickedImages, setClickedImages] = useState<Set<string>>(new Set());
 
-  function chunkArray(arr, size) {
-    const chunks = [];
-    for (let i = 0; i < arr.length; i += size) {
-      chunks.push(arr.slice(i, i + size));
-    }
-    return chunks;
-  }
-
-  const groups = chunkArray(images, 4);
+  const handleClick = (url: string) => {
+    setClickedImages((prev) => new Set(prev).add(url));
+  };
 
   return (
-    <div className="mx-auto px-4 py-10">
-      {groups.map((group, idx) => (
-        <div key={idx} className="grid grid-cols-3 grid-rows-1 gap-2">
-          {/* Left side: 3 small images */}
-          <div className="col-span-2 grid grid-cols-2 grid-rows-2 gap-2">
-            {/* Top-left */}
-            {group[0] && (
-              <img
-                src={group[0]}
-                alt={`Gallery ${idx * 4 + 1}`}
-                className="w-full h-48 object-cover"
-              />
-            )}
-            {/* Top-right */}
-            {group[1] && (
-              <img
-                src={group[1]}
-                alt={`Gallery ${idx * 4 + 2}`}
-                className="w-full h-48 object-cover"
-              />
-            )}
-            {/* Bottom: span both cols */}
-            {group[2] && (
-              <img
-                src={group[2]}
-                alt={`Gallery ${idx * 4 + 3}`}
-                className="col-span-2 w-full h-[232px] object-cover"
-              />
-            )}
-          </div>
-
-          {/* Right side: 1 large image spanning two rows */}
-          {group[3] && (
-            <img
-              src={group[3]}
-              alt={`Gallery ${idx * 4 + 4}`}
-              className="row-span-2 w-full h-[30rem] object-cover"
-            />
-          )}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+      {chunks.map((group, colIdx) => (
+        <div className="grid gap-4" key={colIdx}>
+          {group.map((url, imgIdx) => {
+            const isClicked = clickedImages.has(url);
+            return (
+              <div key={imgIdx} onClick={() => handleClick(url)} className="hover:z-50">
+                <img
+                  className={`h-auto max-w-full rounded-lg cursor-pointer transition-all hover:scale-125  duration-300 ${
+                    isClicked ? "grayscale-0" : "filter grayscale hover:grayscale-0"
+                  }`}
+                  src={url}
+                  alt={`Masonry image ${colIdx * 3 + imgIdx + 1}`}
+                />
+              </div>
+            );
+          })}
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default function Gallery() {
   return (
-    <div className="px-8 py-5">
+    <div className="px-8 py-5 bg-black">
       <Header />
       <Pictures />
     </div>
-  )
+  );
 }

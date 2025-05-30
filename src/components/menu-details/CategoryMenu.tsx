@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
+import {menuCategories as menuCat} from "./data"
 type MenuCategory = {
   id: number;
   title: string;
@@ -8,39 +9,13 @@ type MenuCategory = {
 
 export default function DiscoverMenuSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const navigate  = useNavigate();
 
-  const menuCategories: MenuCategory[] = [
-    {
-      id: 1,
-      title: "Breakfast & Starter",
-      bgImage: "/menu/m1.png"
-    },
-    {
-      id: 2,
-      title: "Salad & Lettuces",
-      bgImage: "/menu/m1.png"
-    },
-    {
-      id: 3,
-      title: "Meat & Meals",
-      bgImage: "/menu/m1.png"
-    },
-    {
-      id: 4,
-      title: "Seafood & Soups",
-      bgImage: "/menu/m2.png"
-    },
-    {
-      id: 5,
-      title: "Desserts & Snaks",
-      bgImage: "/menu/m2.png"
-    },
-    {
-      id: 6,
-      title: "Drinks & Juices",
-      bgImage: "/menu/m2.png"
-    }
-  ];
+  const menuCategories: MenuCategory[] = menuCat;
+
+  const handleClick = (id:number) =>{
+    navigate("/menu/"+id)
+  }
 
   return (
     <div className="bg-gradient-to-b from-gray-900 via-slate-900 to-black py-16 px-4">
@@ -63,9 +38,10 @@ export default function DiscoverMenuSection() {
               className="group cursor-pointer"
               onMouseEnter={() => setHoveredCard(category.id)}
               onMouseLeave={() => setHoveredCard(null)}
+              onClick={()=>{handleClick(category.id)}}
             >
               <div
-                className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-105 bg-cover bg-center"
+                className="relative aspect-[4/2] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-105 bg-cover bg-center "
                 style={{
                   backgroundImage: `url(${category.bgImage})`,
                 }}

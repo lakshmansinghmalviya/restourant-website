@@ -7,7 +7,7 @@ import { IoFastFood } from "react-icons/io5";
 // Header Section
 const Header = () => {
   return (
-    <div className="bg-[#F7BA25] px-2 md:px-6 lg:px-10">
+    <div className="bg-[#F7BA25] px-2">
       <nav className="text-white bg-black flex flex-col sm:flex-row gap-6 items-center justify-center sm:justify-between min-h-[5rem] sm:h-20 px-6 py-4 rounded-b-3xl shadow-lg">
         {/* Items */}
         {[
@@ -18,8 +18,8 @@ const Header = () => {
           <div key={index} className="flex items-center gap-3 group transition-all duration-300 hover:scale-105 hover:bg-[#F7BA25]/20 p-2 rounded-xl">
             <div className="bg-[#F7BA25] p-3 rounded-full shadow-md">{item.icon}</div>
             <div className="flex flex-col text-center sm:text-left">
-              <span className="text-base font-medium group-hover:underline">{item.title}</span>
-              <span className="text-base font-medium group-hover:underline">{item.subtitle}</span>
+              <span className="text-base font-medium ">{item.title}</span>
+              <span className="text-base font-medium ">{item.subtitle}</span>
             </div>
           </div>
         ))}

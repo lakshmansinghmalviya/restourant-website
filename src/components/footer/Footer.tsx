@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
     <div className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-          
+
           {/* Logo Section */}
           <div className="flex flex-col items-start">
             <div
@@ -90,9 +90,12 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-6 text-gray-300 uppercase tracking-wider">Payment Methods</h3>
             <div className="grid grid-cols-4 gap-2">
-              {[FaCcVisa, FaCcMastercard, FaCcPaypal, SiGooglepay, SiPhonepe, SiPaytm, SiAmericanexpress, SiRay, FaCreditCard].map((Icon, idx) => (
-                <div key={idx} className="w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                  <Icon className="text-2xl text-white" />
+              {["/pay/p1.svg","/pay/p2.svg","/pay/p3.svg","/pay/p4.svg","/pay/p5.svg","/pay/p6.svg","/pay/p7.svg",].map((s, idx) => (
+                <div
+                  key={idx}
+                  className="w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform duration-300"
+                >
+                  <img className="text-2xl" src={s} />
                 </div>
               ))}
             </div>
