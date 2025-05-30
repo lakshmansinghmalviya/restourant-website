@@ -123,8 +123,8 @@ const Testimonials = () => {
                         onClick={handlePrev}
                         disabled={currentIndex === 0}
                         className={`flex gap-2 items-center transition-colors duration-200 ${currentIndex === 0
-                                ? 'opacity-50 cursor-not-allowed'
-                                : 'hover:text-red-400'
+                            ? 'opacity-50 cursor-not-allowed'
+                            : 'hover:text-red-400'
                             }`}
                     >
                         <FaArrowLeftLong className="w-4 h-4 sm:w-5 sm:h-5 text-red-600" />
@@ -136,8 +136,8 @@ const Testimonials = () => {
                         onClick={handleNext}
                         disabled={currentIndex + reviewsPerPage >= reviews.length}
                         className={`flex gap-2 items-center transition-colors duration-200 ${currentIndex + reviewsPerPage >= reviews.length
-                                ? 'opacity-50 cursor-not-allowed'
-                                : 'hover:text-red-400'
+                            ? 'opacity-50 cursor-not-allowed'
+                            : 'hover:text-red-400'
                             }`}
                     >
                         <span>NEXT</span>
@@ -156,7 +156,7 @@ const Index = () => {
     return (
         <section className="text-white bg-black flex flex-col lg:flex-row">
             {/* Background Image */}
-            <div className="w-full lg:w-auto lg:flex-shrink-0">
+            <div className="w-full hidden lg:block lg:w-auto lg:flex-shrink-0">
                 <img
                     src={bgImageUrl}
                     alt="restaurant background"

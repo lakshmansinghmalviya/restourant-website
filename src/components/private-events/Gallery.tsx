@@ -69,7 +69,7 @@ const Pictures = () => {
 
 export default function Gallery() {
   return (
-    <div className="px-8 py-5 bg-black">
+    <div className="px-2 py-5 bg-black">
       <Header />
       <Pictures />
     </div>
