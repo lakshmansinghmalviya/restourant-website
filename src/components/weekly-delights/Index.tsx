@@ -100,10 +100,10 @@ const Delights = () => {
 export default function Index() {
   return (
     <div className="bg-[#FAFAFA] font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-10">
+      <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-3 py-6 space-y-10">
         <Header />
-        <div className="bg-[#F7BA25] rounded-xl p-6 shadow-md">
-          <div className="bg-white rounded-xl px-6 py-8 shadow-lg">
+        <div className="bg-[#F7BA25] rounded-xl p-2 shadow-md">
+          <div className="bg-white rounded-xl px-2 py-8 shadow-lg">
             <Heading />
             <Delights />
           </div>
