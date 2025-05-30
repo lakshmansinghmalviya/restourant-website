@@ -26,7 +26,7 @@ export default function Home() {
       {/* <Achievements/> */}
       {/* <MeetOurTeam/> */}
       <AllFoodNamesWithImages />
-      <MeetChefs />
+      {/* <MeetChefs /> */}
       <Testimonals />
     </>
   )

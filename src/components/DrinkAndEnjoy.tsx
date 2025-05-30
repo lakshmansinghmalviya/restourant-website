@@ -2,77 +2,60 @@ import React from 'react';
 
 const DrinkEnjoySection = () => {
   return (
-    <div className="bg-gray-100 py-8 px-4">
+    <section className="bg-gray-100 py-8 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Section Title */}
-        {/* <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8">
-          Section-2: [ Drink and Enjoy Food]
-        </h2> */}
-        
-        {/* Main Content Container */}
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <div className="flex flex-col lg:flex-row">
-            {/* Left Side - Drinks Image */}
+            {/* Left Side Image */}
             <div className="lg:w-1/4 bg-gray-200 p-6 flex items-center justify-center">
-              <div className="text-center">
-                <div className="mb-4">
-                  {/* Wine glasses illustration */}
-                  <div className="flex justify-center space-x-2 mb-2">
-                    <div className="w-8 h-12 bg-yellow-600 rounded-full opacity-80"></div>
-                    <div className="w-8 h-12 bg-purple-800 rounded-full opacity-80"></div>
-                    <div className="w-8 h-12 bg-orange-400 rounded-full opacity-80"></div>
-                  </div>
-                  <div className="flex justify-center space-x-2">
-                    <div className="w-6 h-8 bg-gray-600 rounded-full opacity-60"></div>
-                    <div className="w-6 h-8 bg-yellow-400 rounded-full opacity-60"></div>
-                  </div>
-                </div>
-              </div>
+              <figure className="w-full h-48 lg:h-64">
+                <img 
+                  loading="lazy"
+                  src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=300&fit=crop&crop=center" 
+                  alt="Various drinks and cocktails" 
+                  className="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </figure>
             </div>
-            
-            {/* Center - Text Content */}
-            <div className="lg:w-1/2 p-8 border-l-4 border-orange-500">
+
+            {/* Center Content */}
+            <article className="lg:w-1/2 p-6 md:p-8 border-l-4 border-orange-500">
               <h3 className="text-3xl md:text-4xl font-light text-orange-500 mb-6">
                 Drink & enjoy
               </h3>
-              
               <div className="text-gray-700 space-y-4 leading-relaxed">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur.
+                  Savor every sip and enjoy an unforgettable dining experience.
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, elit, sed do eiusmod. Lorem ipsum dolor sit amet, consectetur elit. Lorem ipsum dolor sit amet elit.
+                  Whether it’s a night out or a special occasion, enjoy our wide selection of handcrafted drinks and delicious food in a vibrant atmosphere.
                 </p>
               </div>
-              
-              {/* Call to Action */}
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <p className="text-lg text-gray-800">
                   <span className="text-orange-500 font-medium">Call us</span> and book your table for tonight
                 </p>
-                <p className="text-xl font-bold text-gray-800 mt-2">
+                <a href="tel:+840123456789" className="text-xl font-bold text-gray-800 mt-2 block">
                   +84 0123456789
-                </p>
+                </a>
               </div>
-            </div>
-            
-            {/* Right Side - Wine Pouring Image */}
+            </article>
+
+            {/* Right Side Image */}
             <div className="lg:w-1/4 bg-gray-200 p-6 flex items-center justify-center">
-              <div className="w-full h-48 lg:h-64 bg-gradient-to-br from-red-800 via-red-600 to-red-400 rounded-lg relative overflow-hidden">
-                {/* Wine bottle silhouette */}
-                <div className="absolute top-4 right-4 w-8 h-20 bg-black rounded-t-full opacity-60"></div>
-                {/* Wine glass */}
-                <div className="absolute bottom-8 left-6 w-12 h-16 border-4 border-white rounded-b-full opacity-80"></div>
-                {/* Wine pour effect */}
-                <div className="absolute top-12 right-8 w-2 h-12 bg-red-900 opacity-70 transform rotate-12"></div>
-                {/* Additional wine glasses */}
-                <div className="absolute bottom-4 right-4 w-8 h-12 border-2 border-white rounded-b-full opacity-60"></div>
-              </div>
+              <figure className="w-full h-48 lg:h-64">
+                <img 
+                  loading="lazy"
+                  src="/drink/d1.png" 
+                  alt="Wine being poured into glass" 
+                  className="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </figure>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
