@@ -41,7 +41,6 @@ const useIntersectionObserver = (options: IntersectionObserverOptions = {}): [Re
       setIsIntersecting(entry.isIntersecting);
     }, {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px',
       ...options
     });
 
@@ -82,7 +81,7 @@ const FadeInSection: React.FC<AnimationComponentProps> = ({
   );
 };
 
-// Slide In From Left Component
+// Slide In From Left Component - Fixed to prevent horizontal overflow
 const SlideInLeft: React.FC<AnimationComponentProps> = ({ 
   children, 
   delay = 0, 
@@ -91,21 +90,23 @@ const SlideInLeft: React.FC<AnimationComponentProps> = ({
   const [ref, isIntersecting] = useIntersectionObserver();
   
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        isIntersecting 
-          ? 'opacity-100 translate-x-0' 
-          : 'opacity-0 -translate-x-12'
-      } ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
+    <div className="overflow-hidden"> {/* Prevent horizontal overflow */}
+      <div
+        ref={ref}
+        className={`transition-all duration-1000 ease-out ${
+          isIntersecting 
+            ? 'opacity-100 translate-x-0' 
+            : 'opacity-0 -translate-x-8' // Reduced from -translate-x-12
+        } ${className}`}
+        style={{ transitionDelay: `${delay}ms` }}
+      >
+        {children}
+      </div>
     </div>
   );
 };
 
-// Slide In From Right Component
+// Slide In From Right Component - Fixed to prevent horizontal overflow
 const SlideInRight: React.FC<AnimationComponentProps> = ({ 
   children, 
   delay = 0, 
@@ -114,16 +115,18 @@ const SlideInRight: React.FC<AnimationComponentProps> = ({
   const [ref, isIntersecting] = useIntersectionObserver();
   
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        isIntersecting 
-          ? 'opacity-100 translate-x-0' 
-          : 'opacity-0 translate-x-12'
-      } ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
+    <div className="overflow-hidden"> {/* Prevent horizontal overflow */}
+      <div
+        ref={ref}
+        className={`transition-all duration-1000 ease-out ${
+          isIntersecting 
+            ? 'opacity-100 translate-x-0' 
+            : 'opacity-0 translate-x-8' // Reduced from translate-x-12
+        } ${className}`}
+        style={{ transitionDelay: `${delay}ms` }}
+      >
+        {children}
+      </div>
     </div>
   );
 };
@@ -194,7 +197,7 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <>
+    <div className="overflow-x-hidden"> {/* Main container to prevent horizontal scroll */}
       {/* Hero Section - No animation needed as it's the first section */}
       <Hero />
       
@@ -206,7 +209,7 @@ const Home: React.FC = () => {
       ))}
 
       {/* Back to Top Button */}
-      {/* {showBackToTop && (
+      {showBackToTop && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-6 right-6 bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 hover:transform hover:scale-110"
@@ -228,80 +231,18 @@ const Home: React.FC = () => {
             />
           </svg>
         </button>
-      )} */}
-    </>
+      )}
+    </div>
   );
 };
 
 export default Home;
-
-// Alternative approach - Individual component wrapping
-// If you want more control over each section, use this instead:
-
-/*
-const Home: React.FC = () => {
-  const [showBackToTop, setShowBackToTop] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleScroll = (): void => {
-      setShowBackToTop(window.pageYOffset > 500);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = (): void => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  return (
-    <>
-      <Hero />
-      
-      <FadeInSection delay={100}>
-        <WeeklyDelights />
-      </FadeInSection>
-      
-      <SlideInLeft delay={200}>
-        <DrinkAndEnjoy />
-      </SlideInLeft>
-      
-      <SlideInRight delay={100}>
-        <CategoryMenu />
-      </SlideInRight>
-      
-      <ScaleIn delay={150}>
-        <AllFoodNamesWithImages />
-      </ScaleIn>
-      
-      <FadeInSection delay={200}>
-        <Gallery />
-      </FadeInSection>
-      
-      <SlideInLeft delay={100}>
-        <Testimonals />
-      </SlideInLeft>
-
-      {showBackToTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 z-50 hover:transform hover:scale-110"
-          type="button"
-        >
-          ↑
-        </button>
-      )}
-    </>
-  );
-};
-*/
 
 // Export individual animation components for use in other files
 export { FadeInSection, SlideInLeft, SlideInRight, ScaleIn, useIntersectionObserver };
 
 // Types export for external use
 export type { AnimationComponentProps, IntersectionObserverOptions };
-
 
 
 // import CategoryMenu from "./components/menu-details/CategoryMenu"

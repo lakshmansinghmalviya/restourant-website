@@ -69,8 +69,7 @@ const ChefsBestsellersCarousel = () => {
 
   return (
     <div className="bg-red-800 py-12 px-4 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        {/* Title */}
+      <div className="max-w-6xl mx-auto"> 
         <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-light text-center mb-12">
           Chef's Bestsellers - Dishes You Must Try
         </h2>
