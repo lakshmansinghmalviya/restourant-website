@@ -10,28 +10,28 @@ const Testimonials = () => {
             name: 'Liam mendes',
             account: '@liammendes',
             ratings: '',
-            review: 'This restaurant has such a cozy and charming atmosphere! From the moment you walk in, you feel right at home. The warm lighting, rustic decor, and comfortable seating make it an ideal place for a relaxed meal. Considering the fresh ingredients and flavorful dishes, you really get more than what you pay for. Highly recommended for those who want a quality meal without breaking the bank.'
+            review: 'This restaurant has such a cozy and charming atmosphere! From the moment you walk in, you feel right at home.'
         },
         {
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0yYAiPdNDUOLGGSox0KXPhPza5rId77VZqcUHa3B2-lbmnGPB-bKom1D8BUTn_cVgHjQ&usqp=CAU',
             name: 'Noah Wood',
             account: '@noahwood',
             ratings: '',
-            review: `A lovely experience from booking on the app so easy and then a very fast response. When we arrived our request for a private booth was accommodated. Came on a Sunday afternoon for Mother's Day and was seated quickly. We were a pretty big party of 12 but the staff managed us well`
+            review: `A lovely experience from booking on the app so easy and then a very fast response. When we arrived our request for a private booth was accommodated. Came on a Sunday afternoon`
         },
         {
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5-OtCp1YSpRh2DOBRkuls3Mmxn-6R7QJ9zvazaMpX_4ana52wrD89GK8jMKEbstHuHLQ&usqp=CAU',
             name: 'Oliver Queen',
             account: '@oliverqueen',
             ratings: '',
-            review: 'It was super delicious! Mine was a takeout order so I was pretty happy with the quick service. We had a lovely meal here last night, with personal recommendations right for us. Got to try new flavours, and even walked away with a jar of our own freebie as a gift from the head chef'
+            review: 'It was super delicious! Mine was a takeout order so I was pretty happy with the quick service. We had a lovely meal here last night'
         },
         {
             img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC4qAtqo1Wl7S5UaU63FPkg15Y5sDxeMGLgw&s',
             name: 'Barry Allen',
             account: '@barryallen',
             ratings: '',
-            review: 'Good food and acceptable price. With good seating arrangement and a place to visit with family,business meeting and friends. Good food with North Indian, Chinese and intercontinental Service is superb they take care.'
+            review: 'Good food and acceptable price. With good seating arrangement and a place to visit with family,business meeting and friends..'
         },
     ];
 

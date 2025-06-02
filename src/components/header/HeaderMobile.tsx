@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Menu, 
-  X, 
-  Facebook, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Menu,
+  X,
+  Facebook,
   Instagram,
   Calendar
 } from 'lucide-react';
@@ -50,9 +50,8 @@ const ResponsiveHeader = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg' : 'bg-black'
-    }`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg' : 'bg-black'
+      }`}>
       {/* Top Contact Bar */}
       <div className="hidden lg:block bg-gray-900 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,7 +85,10 @@ const ResponsiveHeader = () => {
           <div className="flex justify-between items-center py-4 lg:py-6">
             <div className="lg:absolute lg:top-[70px] lg:left-1/2 lg:transform lg:-translate-x-1/2 ">
               <div className="w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full border-2 border-red-0 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <img src="/logo2.png" alt="Logo" />
+                <Link
+                  to="/">
+                  <img src="/logo2.png" alt="Logo" />
+                </Link>
               </div>
             </div>
 
@@ -144,11 +146,10 @@ const ResponsiveHeader = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden mobile-menu-container transition-all duration-300 ease-in-out ${
-        isMobileMenuOpen 
-          ? 'max-h-screen opacity-100' 
+      <div className={`lg:hidden mobile-menu-container transition-all duration-300 ease-in-out ${isMobileMenuOpen
+          ? 'max-h-screen opacity-100'
           : 'max-h-0 opacity-0 pointer-events-none'
-      } overflow-hidden bg-gray-900 border-b border-gray-800`}>
+        } overflow-hidden bg-gray-900 border-b border-gray-800`}>
         <div className="px-4 py-6 space-y-6">
           <div className="space-y-4 pb-6 border-b border-gray-700">
             <div className="flex items-center space-x-3 text-gray-300">
