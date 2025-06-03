@@ -21,7 +21,7 @@ const Modal: React.FC<ModalProps> = ({
 
   return (
     <div
-      className="fixed z-10 overflow-y-auto w-full"
+      className="fixed top-0 left-0 z-50 w-screen h-screen flex items-center justify-center"
       aria-labelledby="modal-title"
       role="dialog"
       aria-modal="true"
@@ -34,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({
         <div className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all">
           {/* Body */}
           <div className="bg-white">
-            <div className="sm:flex sm:items-start max-h-[450px] overflow-y-auto p-1 rounded-lg">  
+            <div className="sm:flex sm:items-start max-h-[90vh] overflow-y-auto rounded-lg">  
                   <BookTable
                     onClose={onClose}
                   />  

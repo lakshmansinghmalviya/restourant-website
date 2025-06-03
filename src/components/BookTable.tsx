@@ -166,7 +166,7 @@ export default function ReservationForm({ onClose }) {
       </div>
 
       {/* Right - Image */}
-      <div className="w-full lg:w-1/2 h-64 lg:h-auto relative">
+      <div className="w-full hidden lg:block lg:w-1/2 h-64 lg:h-auto relative">
         <img
           src="/table/t1.png" // 👈 Place your image in /public directory as "reservation.jpg"
           alt="Reservation"
