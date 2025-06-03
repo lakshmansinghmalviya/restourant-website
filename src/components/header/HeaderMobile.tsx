@@ -18,7 +18,6 @@ const ResponsiveHeader = () => {
   const [open, setOpen] = useState(false);
 
   const handleDeactivate = () => {
-    // alert("Account deactivated.");
     setOpen(false);
   };
 
@@ -32,7 +31,7 @@ const ResponsiveHeader = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isMobileMenuOpen && !event.target.closest('.mobile-menu-container')) {
+      if (isMobileMenuOpen && !event.target.closest('.mobile-menu-container') && !event.target.closest('.toggle-button')) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -57,32 +56,32 @@ const ResponsiveHeader = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg' : 'bg-black'
-      }`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/95 backdrop-blur-md shadow-lg' : 'bg-black'}`}>
+      
       {/* Top Contact Bar */}
       <div className="hidden lg:block bg-gray-900 border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-2 text-sm">
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2 text-gray-300 hover:text-red-500 transition-colors duration-300">
-                <MapPin className="w-4 h-4 flex-shrink-0" />
+                <MapPin className="w-4 h-4" />
                 <span className="hidden xl:inline">Herbert-Heckmann Anlage 165451 Kelsterbach Germany</span>
                 <span className="xl:hidden">Kelsterbach, Germany</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300 hover:text-red-500 transition-colors duration-300">
-                <Phone className="w-4 h-4 flex-shrink-0" />
+                <Phone className="w-4 h-4" />
                 <span>+496107 4078377</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300 hover:text-red-500 transition-colors duration-300">
-                <Mail className="w-4 h-4 flex-shrink-0" />
+                <Mail className="w-4 h-4" />
                 <span>info@Garcias-Kitchen.de</span>
               </div>
             </div>
-            <button className="bg-red-600 hover:bg-red-700 text-white px-4 py-1 rounded-md transition-colors duration-300 font-medium flex items-center space-x-2"
+            <button
+              className="bg-red-600 hover:bg-red-700 text-white px-4 py-1 rounded-md transition-colors duration-300 font-medium flex items-center space-x-2"
               onClick={() => setOpen(true)}
             >
-              <Calendar className="w-4 h-4"
-              />
+              <Calendar className="w-4 h-4" />
               <span>RESERVATION</span>
             </button>
           </div>
@@ -93,16 +92,17 @@ const ResponsiveHeader = () => {
       <div className="bg-black border-b border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4 lg:py-6">
+            
+            {/* Logo */}
             <div className="lg:absolute lg:top-[70px] lg:left-1/2 lg:transform lg:-translate-x-1/2 ">
               <div className="w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full border-2 border-red-0 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <Link
-                  to="/">
+                <Link to="/">
                   <img src="/logo2.png" alt="Logo" />
                 </Link>
               </div>
             </div>
 
-            {/* Left Navigation */}
+            {/* Desktop Left Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 <Link
@@ -115,7 +115,7 @@ const ResponsiveHeader = () => {
               ))}
             </nav>
 
-            {/* Right Navigation */}
+            {/* Desktop Right Navigation */}
             <div className="hidden lg:flex items-center space-x-8">
               <nav className="flex items-center space-x-8">
                 {rightNavItems.map((item) => (
@@ -138,20 +138,21 @@ const ResponsiveHeader = () => {
               </div>
             </div>
 
-            {/* Mobile Icons */}
+            {/* Mobile Buttons */}
             <div className="lg:hidden flex items-center space-x-3">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-md transition-colors duration-300 text-sm font-medium"
+              <button
+                className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-md transition-colors duration-300 text-sm font-medium"
                 onClick={() => setOpen(true)}
-
               >
                 <Calendar className="w-4 h-4" />
               </button>
               <button
-                onClick={toggleMobileMenu}
-                className="p-2 rounded-md text-white hover:bg-gray-800 transition-colors duration-300 mobile-menu-container"
+                className="rounded-md text-white hover:bg-gray-800 transition-colors duration-300 flex items-center justify-center toggle-button"
                 aria-label="Toggle mobile menu"
+                onClick={toggleMobileMenu}
               >
-                {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+                {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8 rounded-md text-white hover:bg-gray-800 transition-colors duration-300 flex items-center justify-center toggle-button"
+                aria-label="Toggle mobile menu" />}
               </button>
             </div>
           </div>
@@ -159,27 +160,24 @@ const ResponsiveHeader = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden mobile-menu-container transition-all duration-300 ease-in-out ${isMobileMenuOpen
-        ? 'max-h-screen opacity-100'
-        : 'max-h-0 opacity-0 pointer-events-none'
-        } overflow-hidden bg-gray-900 border-b border-gray-800`}>
+      <div className={`lg:hidden mobile-menu-container transition-all duration-300 ease-in-out ${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none'} overflow-hidden bg-gray-900 border-b border-gray-800`}>
         <div className="px-4 py-6 space-y-6">
           <div className="space-y-4 pb-6 border-b border-gray-700">
             <div className="flex items-center space-x-3 text-gray-300">
-              <MapPin className="w-5 h-5 text-red-500 flex-shrink-0" />
+              <MapPin className="w-5 h-5 text-red-500" />
               <span className="text-sm">Herbert-Heckmann Anlage 165451 Kelsterbach Germany</span>
             </div>
             <div className="flex items-center space-x-3 text-gray-300">
-              <Phone className="w-5 h-5 text-red-500 flex-shrink-0" />
+              <Phone className="w-5 h-5 text-red-500" />
               <span className="text-sm">+496107 4078377</span>
             </div>
             <div className="flex items-center space-x-3 text-gray-300">
-              <Mail className="w-5 h-5 text-red-500 flex-shrink-0" />
+              <Mail className="w-5 h-5 text-red-500" />
               <span className="text-sm">info@Garcias-Kitchen.de</span>
             </div>
           </div>
 
-          {/* Mobile Nav */}
+          {/* Mobile Navigation Links */}
           <nav className="space-y-4">
             {[...navItems, ...rightNavItems].map((item) => (
               <Link
@@ -193,13 +191,11 @@ const ResponsiveHeader = () => {
             ))}
           </nav>
 
-          {/* Mobile Button */}
-          <button className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-md transition-colors duration-300 font-medium flex items-center justify-center space-x-2"
+          <button
+            className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-md transition-colors duration-300 font-medium flex items-center justify-center space-x-2"
             onClick={() => setOpen(true)}
           >
-            <Calendar className="w-5 h-5"
-
-            />
+            <Calendar className="w-5 h-5" />
             <span>MAKE RESERVATION</span>
           </button>
 
@@ -213,11 +209,12 @@ const ResponsiveHeader = () => {
           </div>
         </div>
       </div>
+
       <Dialog
         isOpen={open}
         title="Deactivate Account"
-        description="Are you sure you want to deactivate your account? All your data will be removed. This action cannot be undone."
-        onClose={() => setOpen(false)}
+        description="Are you sure you want to deactivate your account? All your data will be removed..."
+        onClose={handleDeactivate}
       />
     </header>
   );
