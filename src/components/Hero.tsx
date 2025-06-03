@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative flex justify-center items-center px-4 py-8 min-h-screen overflow-hidden">
+    <div className="relative flex justify-center items-center px-4 py-8 max-h-[50%] overflow-hidden">
 
       {/* Auto-sliding main background images */}
       {mainBackgroundImages.map((img, index) => (
