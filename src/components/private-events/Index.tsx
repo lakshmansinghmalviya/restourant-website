@@ -28,7 +28,7 @@ const Header = () => {
 
 export default function Index() {
   return (
-    <div className="text-white bg-red-800 flex flex-col gap-10 px-8 py-3">
+    <div className="text-white bg-red-800 flex flex-col gap-10 py-3">
       {/* Navbar */} 
       <BookEvent />
       <Gallery />

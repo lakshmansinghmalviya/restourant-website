@@ -1,5 +1,5 @@
 import React from 'react'
-import ChefsBestCooks from "./chef-best-sellers/Index"
+import ChefsBestCooks from "../chef-best-sellers/Index"
 
 const Special = () => {
     return (

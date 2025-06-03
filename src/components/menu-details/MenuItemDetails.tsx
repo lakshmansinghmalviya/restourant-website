@@ -1,233 +1,224 @@
-import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { MenuCategory,MenuItem, menuCategories as cats  } from './data';
+import { useState, useMemo } from "react";
 
-export const menuCategories: MenuCategory[] = cats;
+// Interfaces
+interface MenuItem {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  category: string;
+  image?: string;
+  isVegetarian?: boolean;
+  isSpicy?: boolean;
+  isPopular?: boolean;
+}
 
-const MenuItemDetails = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [quantity, setQuantity] = useState(1);
+interface MenuCategory {
+  id: string;
+  name: string;
+  icon: string;
+}
 
-  // Find the menu item by ID
-  const findMenuItem = (itemId: string): { item: MenuItem; category: MenuCategory } | null => {
-    const numericId = parseInt(itemId);
-    
-    for (const category of menuCategories) {
-      if (category.children) {
-        const item = category.children.find(item => item.id === numericId);
-        if (item) {
-          return { item, category };
-        }
+const RestaurantMenu = () => {
+  const menuCategories: MenuCategory[] = [
+    { id: "all", name: "All Items", icon: "🍽️" },
+    { id: "appetizers", name: "Appetizers", icon: "🥗" },
+    { id: "mains", name: "Main Course", icon: "🍖" },
+    { id: "pasta", name: "Pasta & Rice", icon: "🍝" },
+    { id: "pizza", name: "Pizza", icon: "🍕" },
+    { id: "desserts", name: "Desserts", icon: "🍰" },
+    { id: "beverages", name: "Beverages", icon: "🥤" },
+  ];
+
+  const menuItems: MenuItem[] = [
+    {
+      id: 1,
+      name: "Margherita Pizza",
+      description: "Classic delight with 100% real mozzarella cheese",
+      price: 7.99,
+      category: "pizza",
+      isVegetarian: true,
+      isPopular: true,
+    },
+    {
+      id: 2,
+      name: "Chicken Biryani",
+      description: "Fragrant basmati rice cooked with chicken and spices",
+      price: 10.5,
+      category: "pasta",
+      isVegetarian: false,
+      isSpicy: true,
+    },
+    {
+      id: 3,
+      name: "Veggie Burger",
+      description: "Grilled vegetable patty with fresh lettuce and tomato",
+      price: 6.25,
+      category: "mains",
+      isVegetarian: true,
+      isPopular: true,
+    },
+    {
+      id: 4,
+      name: "Chocolate Lava Cake",
+      description: "Molten chocolate cake served with vanilla ice cream",
+      price: 5.75,
+      category: "desserts",
+      isVegetarian: true,
+    },
+    {
+      id: 5,
+      name: "Garlic Bread",
+      description: "Toasted bread with garlic and butter",
+      price: 3.99,
+      category: "appetizers",
+      isVegetarian: true,
+    },
+    {
+      id: 6,
+      name: "Cold Coffee",
+      description: "Chilled coffee with a dash of cream and ice",
+      price: 2.5,
+      category: "beverages",
+      isVegetarian: true,
+    },
+  ];
+
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showVegetarianOnly, setShowVegetarianOnly] = useState(false);
+  const [sortBy, setSortBy] = useState("name");
+
+  const filteredItems = useMemo(() => {
+    let filtered = menuItems.filter((item) => {
+      const categoryMatch = selectedCategory === "all" || item.category === selectedCategory;
+      const searchMatch =
+        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchQuery.toLowerCase());
+      const vegetarianMatch = !showVegetarianOnly || item.isVegetarian;
+      return categoryMatch && searchMatch && vegetarianMatch;
+    });
+
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case "price-low":
+          return a.price - b.price;
+        case "price-high":
+          return b.price - a.price;
+        case "popular":
+          return (b.isPopular ? 1 : 0) - (a.isPopular ? 1 : 0);
+        default:
+          return a.name.localeCompare(b.name);
       }
-    }
-    return null;
-  };
+    });
 
-  const menuData = id ? findMenuItem(id) : null;
-  console.log("Id is coming like this "+ id);
-  console.log("Menu data i scoming like this  "+ menuData);
-  // Get related items from the same category
-  const getRelatedItems = (currentCategory: MenuCategory, currentItemId: number): MenuItem[] => {
-    if (!currentCategory.children) return [];
-    return currentCategory.children.filter(item => item.id !== currentItemId).slice(0, 3);
-  };
+    return filtered;
+  }, [selectedCategory, searchQuery, showVegetarianOnly, sortBy]);
 
-  const handleQuantityChange = (action: 'increase' | 'decrease') => {
-    if (action === 'increase') {
-      setQuantity(prev => prev + 1);
-    } else if (action === 'decrease' && quantity > 1) {
-      setQuantity(prev => prev - 1);
-    }
-  };
+  return (
+    <div className="bg-gray-50 px-4 sm:px-6 lg:px-8 py-6 pt-20">
+      {/* Header */}
+      <header className="text-center mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">Our Menu</h1>
+        <p className="text-gray-600 mt-2 text-sm sm:text-base">
+          Discover our delicious selection of carefully crafted dishes
+        </p>
+      </header>
 
-  const handleAddToCart = () => {
-    if (menuData) {
-      // Add to cart logic here
-      alert(`Added ${quantity} x ${menuData.item.name} to cart!`);
-    }
-  };
+      {/* Filters */}
+      <div className="bg-white rounded-xl shadow p-4 sm:p-6 mb-6">
+        {/* Search */}
+        <div className="relative mb-4">
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search dishes..."
+            className="w-full border border-gray-300 rounded-lg py-2 pl-10 pr-4 focus:ring-red-500 focus:border-red-500 text-sm"
+          />
+          <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 10-14 0 7 7 0 0014 0z" />
+            </svg>
+          </div>
+        </div>
 
-  if (!menuData) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">Item Not Found</h1>
-          <p className="text-gray-600 mb-6">The menu item you're looking for doesn't exist.</p>
-          <button
-            onClick={() => navigate('/menu')}
-            className="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors"
+        {/* Categories */}
+        <div className="mb-4">
+          <h3 className="text-gray-800 font-semibold mb-2">Categories</h3>
+          <div className="grid grid-cols-3 xs:grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-2">
+            {menuCategories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setSelectedCategory(cat.id)}
+                className={`flex flex-col items-center p-2 text-xs sm:text-sm rounded-lg border 
+                  ${selectedCategory === cat.id ? "bg-red-100 border-red-500 text-red-600" : "bg-white border-gray-300 hover:bg-gray-50"}`}
+              >
+                <span className="text-lg">{cat.icon}</span>
+                <span>{cat.name}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Veg & Sort Filters */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <label className="inline-flex items-center">
+            <input
+              type="checkbox"
+              className="form-checkbox"
+              checked={showVegetarianOnly}
+              onChange={() => setShowVegetarianOnly((v) => !v)}
+            />
+            <span className="ml-2 text-sm text-gray-700">Vegetarian Only</span>
+          </label>
+
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className="border border-gray-300 rounded-lg p-2 text-sm"
           >
-            Back to Menu
+            <option value="name">Sort by Name</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="popular">Most Popular</option>
+          </select>
+
+          <button
+            onClick={() => {
+              setSelectedCategory("all");
+              setSearchQuery("");
+              setShowVegetarianOnly(false);
+              setSortBy("name");
+            }}
+            className="ml-auto text-sm text-red-500 hover:underline"
+          >
+            Clear Filters
           </button>
         </div>
       </div>
-    );
-  }
 
-  const { item, category } = menuData;
-  const relatedItems = getRelatedItems(category, item.id);
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Breadcrumb */}
-      <div className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <nav className="flex items-center space-x-2 text-sm text-gray-600">
-            <button 
-              onClick={() => navigate('/')}
-              className="hover:text-orange-600 transition-colors"
-            >
-              Home
-            </button>
-            <span>/</span>
-            <button 
-              onClick={() => navigate('/menu')}
-              className="hover:text-orange-600 transition-colors"
-            >
-              Menu
-            </button>
-            <span>/</span>
-            <span className="text-gray-800">{category.title}</span>
-            <span>/</span>
-            <span className="text-orange-600 font-medium">{item.name}</span>
-          </nav>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-          <div className="grid md:grid-cols-2 gap-8 p-8">
-            {/* Image Section */}
-            <div className="space-y-4">
-              <div className="aspect-square bg-gray-100 rounded-xl overflow-hidden">
-                <img
-                  src={item.image || '/placeholder-food.jpg'}
-                  alt={item.name}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = '/placeholder-food.jpg';
-                  }}
-                />
-              </div>
-              
-              {/* Category Badge */}
-              <div className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
-                {category.title}
-              </div>
+      {/* Menu Items */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        {filteredItems.map((item) => (
+          <div key={item.id} className="bg-white rounded-xl shadow p-4 flex flex-col justify-between h-full">
+            <div>
+              <h4 className="text-lg font-semibold text-gray-800">{item.name}</h4>
+              <p className="text-gray-600 text-sm mt-1">{item.description}</p>
             </div>
-
-            {/* Details Section */}
-            <div className="space-y-6">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">{item.name}</h1>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                  {item.description || 'Delicious menu item crafted with care and quality ingredients.'}
-                </p>
-              </div>
-
-              {/* Price */}
-              <div className="flex items-center space-x-2">
-                <span className="text-3xl font-bold text-orange-600">${item.price.toFixed(2)}</span>
-                <span className="text-gray-500">per serving</span>
-              </div>
-
-              {/* Quantity Selector */}
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-gray-700">Quantity</label>
-                <div className="flex items-center space-x-3">
-                  <button
-                    onClick={() => handleQuantityChange('decrease')}
-                    className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
-                    disabled={quantity <= 1}
-                  >
-                    <span className="text-lg font-medium">−</span>
-                  </button>
-                  <span className="text-xl font-medium w-8 text-center">{quantity}</span>
-                  <button
-                    onClick={() => handleQuantityChange('increase')}
-                    className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
-                  >
-                    <span className="text-lg font-medium">+</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Total Price */}
-              <div className="bg-gray-50 rounded-lg p-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-medium text-gray-700">Total:</span>
-                  <span className="text-2xl font-bold text-orange-600">
-                    ${(item.price * quantity).toFixed(2)}
-                  </span>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="space-y-3">
-                <button
-                  onClick={handleAddToCart}
-                  className="w-full bg-orange-600 text-white py-4 rounded-xl font-semibold text-lg hover:bg-orange-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
-                >
-                  Add to Cart
-                </button>
-                <button
-                  onClick={() => navigate('/menu')}
-                  className="w-full border-2 border-gray-300 text-gray-700 py-4 rounded-xl font-semibold text-lg hover:border-orange-600 hover:text-orange-600 transition-colors"
-                >
-                  Continue Shopping
-                </button>
+            <div className="mt-4 flex justify-between items-center">
+              <span className="text-red-600 font-bold">${item.price.toFixed(2)}</span>
+              <div className="flex space-x-1 text-xs">
+                {item.isVegetarian && <span className="text-green-600">🌱</span>}
+                {item.isSpicy && <span className="text-red-500">🌶️</span>}
+                {item.isPopular && <span className="text-yellow-500">⭐</span>}
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Related Items */}
-        {relatedItems.length > 0 && (
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">More from {category.title}</h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {relatedItems.map((relatedItem) => (
-                <div
-                  key={relatedItem.id}
-                  className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-                  onClick={() => navigate(`/menu/${relatedItem.id}`)}
-                >
-                  <div className="aspect-video bg-gray-100">
-                    <img
-                      src={relatedItem.image || '/placeholder-food.jpg'}
-                      alt={relatedItem.name}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = '/placeholder-food.jpg';
-                      }}
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="font-semibold text-gray-900 mb-1">{relatedItem.name}</h3>
-                    <p className="text-gray-600 text-sm mb-2 line-clamp-2">
-                      {relatedItem.description}
-                    </p>
-                    <div className="flex justify-between items-center">
-                      <span className="text-lg font-bold text-orange-600">
-                        ${relatedItem.price.toFixed(2)}
-                      </span>
-                      <button className="text-orange-600 hover:text-orange-700 font-medium text-sm">
-                        View Details →
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        ))}
       </div>
     </div>
   );
 };
 
-export default MenuItemDetails;
+export default RestaurantMenu;

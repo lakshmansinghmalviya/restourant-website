@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Home";
 import About from "./components/about/About";
-import Special from "./components/Special";
+import Special from "./components/special/Special";
 import Events from "./components/private-events/Index"
 import MenuItemDetails from "./components/menu-details/MenuItemDetails"
 
