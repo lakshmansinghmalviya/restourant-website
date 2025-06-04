@@ -2,14 +2,18 @@ import { useState, useEffect } from 'react';
 import React from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 
+const getImageUrls = (): string[] => {
+  const urls = [];
+  // main carousel bg
+  for (let i = 1; i <= 16; i++) {
+    urls.push("/food/f" + i + ".jpg");
+  }
+  return urls;
+};
 
 const Hero = () => {
   // Auto-sliding background for main section
-  const mainBackgroundImages = [
-    "/drink/d2.png",
-    "/drink/d1.png",
-    "/menu/m1.png",
-  ];
+  const mainBackgroundImages =  getImageUrls();
 
   // Array of drink images for the content container background
   const containerBackgroundImages = [
