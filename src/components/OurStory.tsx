@@ -34,7 +34,7 @@ const OurStory = () => {
           <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/story/s1.png"
+                src="/story/s1.jpg"
                 alt="Our Story - Restaurant Interior"
                 className="w-full h-64 sm:h-80 lg:h-96 xl:h-[500px] object-cover transition-transform duration-700 hover:scale-105"
               />

@@ -168,7 +168,7 @@ export default function ReservationForm({ onClose }) {
       {/* Right - Image */}
       <div className="w-full hidden lg:block lg:w-1/2 h-64 lg:h-auto relative">
         <img
-          src="/table/t1.png" // 👈 Place your image in /public directory as "reservation.jpg"
+          src="/table/t2.jpg" // 👈 Place your image in /public directory as "reservation.jpg"
           alt="Reservation"
           className="w-full h-full object-cover"
         />
