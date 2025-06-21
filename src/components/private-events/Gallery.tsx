@@ -21,7 +21,7 @@ const chunkArray = (arr: string[], size: number): string[][] => {
 const Header = () => {
   return (
     <div className="flex flex-col items-center gap-5 text-white">
-      <h1 className="text-3xl font-bold">Private Events Gallery</h1>
+      <h1 className="text-3xl font-bold">Gallery</h1>
       <p className="text-center">
         Explore our unique spaces for your special occasions
       </p>

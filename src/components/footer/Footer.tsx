@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Payment Methods Section */}
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-6 text-gray-300 uppercase tracking-wider">Payment Methods</h3>
             <div className="grid grid-cols-4 gap-2">
               {["/pay/p1.svg","/pay/p2.svg","/pay/p3.svg","/pay/p4.svg","/pay/p5.svg","/pay/p6.svg","/pay/p7.svg",].map((s, idx) => (
@@ -99,11 +99,11 @@ const Footer: React.FC = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* Newsletter & Social Links Section */}
           <div>
-            <h3 className="text-xl font-bold mb-6 text-gray-300 uppercase tracking-wider">Newsletter</h3>
+            {/* <h3 className="text-xl font-bold mb-6 text-gray-300 uppercase tracking-wider">Newsletter</h3>
             <p className="text-gray-400 text-sm mb-6">Signup for our newsletter</p>
 
             <form onSubmit={handleNewsletterSubmit} className="mb-8">
@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
                   →
                 </button>
               </div>
-            </form>
+            </form> */}
 
             <h4 className="text-lg font-bold mb-4 text-gray-300 uppercase tracking-wider">Follow Us!</h4>
             <div className="flex space-x-4">

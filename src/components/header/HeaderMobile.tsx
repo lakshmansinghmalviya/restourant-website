@@ -77,13 +77,13 @@ const ResponsiveHeader = () => {
                 <span>info@Garcias-Kitchen.de</span>
               </div>
             </div>
-            <button
+            {/* <button
               className="bg-red-600 hover:bg-red-700 text-white px-4 py-1 rounded-md transition-colors duration-300 font-medium flex items-center space-x-2"
               onClick={() => setOpen(true)}
             >
               <Calendar className="w-4 h-4" />
               <span>RESERVATION</span>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
@@ -140,12 +140,12 @@ const ResponsiveHeader = () => {
 
             {/* Mobile Buttons */}
             <div className="lg:hidden flex items-center space-x-3">
-              <button
+              {/* <button
                 className="bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded-md transition-colors duration-300 text-sm font-medium"
                 onClick={() => setOpen(true)}
               >
                 <Calendar className="w-4 h-4" />
-              </button>
+              </button> */}
               <button
                 className="rounded-md text-white hover:bg-gray-800 transition-colors duration-300 flex items-center justify-center toggle-button"
                 aria-label="Toggle mobile menu"
@@ -191,13 +191,13 @@ const ResponsiveHeader = () => {
             ))}
           </nav>
 
-          <button
+          {/* <button
             className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-md transition-colors duration-300 font-medium flex items-center justify-center space-x-2"
             onClick={() => setOpen(true)}
           >
             <Calendar className="w-5 h-5" />
             <span>MAKE RESERVATION</span>
-          </button>
+          </button> */}
 
           <div className="flex justify-center space-x-6 pt-4 border-t border-gray-700">
             <a href="#" className="text-gray-400 hover:text-red-500 transition-colors duration-300">

@@ -114,7 +114,7 @@ const Hero = () => {
             Where every sip, bite, and toast is packed with flavor — and chill is always on the menu
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto justify-center items-center mt-4 sm:mt-6">
+          {/* <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto justify-center items-center mt-4 sm:mt-6">
             <button
               onClick={handleBookTable}
               className="group bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 hover:from-purple-700 hover:via-pink-700 hover:to-red-700 transition-all duration-300 ease-out py-3 sm:py-4 px-8 sm:px-10 rounded-full text-white text-base sm:text-lg font-semibold w-full sm:w-auto min-w-[180px] shadow-lg hover:shadow-purple-500/25 hover:shadow-2xl transform hover:scale-105 hover:-translate-y-1 border border-purple-400/30"
@@ -128,7 +128,7 @@ const Hero = () => {
             >
               🍽️ Explore Menu
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 

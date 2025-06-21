@@ -8,9 +8,9 @@ const OurStory = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12 lg:gap-16">
           {/* Left Text Section */}
-          <div className="w-full lg:w-1/2 space-y-4 sm:space-y-6 text-center lg:text-left">
+          {/* <div className="w-full lg:w-1/2 space-y-4 sm:space-y-6 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 sm:mb-8 tracking-tight leading-tight">
-              Our Story
+              About Us
             </h1>
             <div className="space-y-4 sm:space-y-5 text-base sm:text-lg leading-relaxed">
               <p className="text-red-100">
@@ -26,6 +26,29 @@ const OurStory = () => {
               </p>
               <p className="text-yellow-200 font-semibold italic text-lg sm:text-xl mt-6 sm:mt-8">
                 Come in once & we'll see you again!
+              </p>
+            </div>
+          </div> */}
+          {/* Left Text Section */}
+          <div className="w-full lg:w-1/2 space-y-4 sm:space-y-6 text-center lg:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 sm:mb-8 tracking-tight leading-tight">
+              🥘 About Us
+            </h1>
+            <div className="space-y-4 sm:space-y-5 text-base sm:text-lg leading-relaxed">
+              <p className="text-red-100">
+                Welcome to <span className="text-yellow-300 font-semibold">Gracias Kitchen Restaurant</span> – where Spanish flavors come alive!
+              </p>
+              <p className="text-red-100">
+                We’re a newly opened restaurant with a deep passion for authentic Spanish cuisine and a love for sharing good food with great people. Inspired by the vibrant culture of Spain, our menu brings you classic dishes made with fresh ingredients, bold spices, and heart.
+              </p>
+              <p className="text-red-100">
+                From the comforting taste of patatas bravas to the rich, traditional paella and a variety of flavorful tapas, we’re here to offer you a little taste of Spain, right here in <span className="text-yellow-300 font-semibold">Herbert-Heckmann Anlage 1, 65451 Kelsterbach, Germany</span>.
+              </p>
+              <p className="text-red-100">
+                Whether you're joining us for a relaxed lunch, a cozy dinner, or a celebration with friends, we’re excited to serve you with warmth, flavor, and a touch of Spanish soul.
+              </p>
+              <p className="text-yellow-200 font-semibold italic text-lg sm:text-xl mt-6 sm:mt-8">
+                Come and be part of our journey at Gracias Kitchen Restaurant—we’re just getting started!
               </p>
             </div>
           </div>
