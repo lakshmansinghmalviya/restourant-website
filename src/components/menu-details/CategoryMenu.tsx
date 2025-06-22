@@ -14,7 +14,7 @@ export default function DiscoverMenuSection() {
   const menuCategories: MenuCategory[] = menuCat;
 
   const handleClick = (id:number) =>{
-    navigate("/menu/"+id)
+    // navigate("/menu/"+id)
   }
 
   return (

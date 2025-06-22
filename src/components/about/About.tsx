@@ -9,7 +9,7 @@ const About = () => {
     <>
     <OurStory/>
     <Achievements/>
-    <MeetOurTeam/>
+    {/* <MeetOurTeam/> */}
     {/* <div className="flex flex-wrap gap-10 m-10 ">
       <img src={aboutimg} alt="aboutimg" className=" lg-device:max-w-[50%] " />
       <div className="mobile:w-[100%] mobile:text-justify mobile:mx-0 lg-device:max-w-[40%]">

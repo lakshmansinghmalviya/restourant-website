@@ -102,8 +102,8 @@ const Footer: React.FC = () => {
           </div> */}
 
           {/* Newsletter & Social Links Section */}
-          <div>
-            {/* <h3 className="text-xl font-bold mb-6 text-gray-300 uppercase tracking-wider">Newsletter</h3>
+          {/* <div>
+            <h3 className="text-xl font-bold mb-6 text-gray-300 uppercase tracking-wider">Newsletter</h3>
             <p className="text-gray-400 text-sm mb-6">Signup for our newsletter</p>
 
             <form onSubmit={handleNewsletterSubmit} className="mb-8">
@@ -123,7 +123,7 @@ const Footer: React.FC = () => {
                   →
                 </button>
               </div>
-            </form> */}
+            </form>
 
             <h4 className="text-lg font-bold mb-4 text-gray-300 uppercase tracking-wider">Follow Us!</h4>
             <div className="flex space-x-4">
@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
                 <FaTwitter className="text-lg" />
               </a>
             </div>
-          </div>
+          </div> */}
 
         </div>
       </div>

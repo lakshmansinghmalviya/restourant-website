@@ -11,7 +11,7 @@ const DrinkEnjoySection = () => {
               <figure className="w-full h-48 lg:h-64">
                 <img 
                   loading="lazy"
-                  src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=400&h=300&fit=crop&crop=center" 
+                  src="/food/f6.jpg" 
                   alt="Various drinks and cocktails" 
                   className="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
                 />
@@ -36,7 +36,7 @@ const DrinkEnjoySection = () => {
                   <span className="text-orange-500 font-medium">Call us</span> and book your table for tonight
                 </p>
                 <a href="tel:+840123456789" className="text-xl font-bold text-gray-800 mt-2 block">
-                  +84 0123456789
+                 +496107 4078377
                 </a>
               </div>
             </article>
@@ -46,7 +46,7 @@ const DrinkEnjoySection = () => {
               <figure className="w-full h-48 lg:h-64">
                 <img 
                   loading="lazy"
-                  src="/drink/d1.png" 
+                  src="/food/f3.jpg" 
                   alt="Wine being poured into glass" 
                   className="w-full h-full object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
                 />

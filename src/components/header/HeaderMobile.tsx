@@ -45,12 +45,13 @@ const ResponsiveHeader = () => {
 
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'Menu', href: '/menu' },
-    { label: 'Special', href: '/special' }
+    // { label: 'Menu', href: '/menu' },
+    { label: 'Gallery', href: '/menu' },
+    // { label: 'Special', href: '/special' }
   ];
 
   const rightNavItems = [
-    { label: 'Private Events', href: '/events' },
+    // { label: 'Private Events', href: '/events' },
     { label: 'About Us', href: '/about' },
     { label: 'Contact', href: '/contact' }
   ];
