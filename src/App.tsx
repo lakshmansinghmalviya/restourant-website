@@ -5,6 +5,7 @@ import About from "./components/about/About";
 import Special from "./components/special/Special";
 import Events from "./components/private-events/Index"
 import MenuItemDetails from "./components/menu-details/MenuItemDetails"
+import Gallery from "./components/gallery/GalleryView";
 
 export default function App() {
   return (
@@ -12,13 +13,14 @@ export default function App() {
       <Routes>
         <Route path="/home" element={<Navigate to="/" replace />} />
         <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<MenuItemDetails />} />
+        <Route path="/menu" element={<Gallery />} />
+        {/* <Route path="/menu" element={<MenuItemDetails />} /> */}
         <Route path="/events" element={<Events />} />
         <Route path="/about" element={<About />} />
         {/* <Route path="/pages" element={<Blogs />} /> */}
         {/* <Route path="/user" element={<Forms />} /> */}
         <Route path="/special" element={<Special />} />
-        <Route path="/menu/:id" element={<MenuItemDetails />} />
+        {/* <Route path="/menu/:id" element={<MenuItemDetails />} /> */}
       </Routes>
     </>
   );

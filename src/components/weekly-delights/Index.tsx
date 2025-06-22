@@ -46,7 +46,7 @@ const Heading = () => {
 const Delights = () => {
   const options = [
     {
-      img: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&h=250&fit=crop&crop=center',
+      img: '/week/w1.jpg',
       heading: 'LUNCHTIME COMBO',
       days: 'Saturday',
       description: 'Enjoy a satisfying lunch combo with a main course, side, and drink.',
