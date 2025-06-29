@@ -33,7 +33,7 @@ const Heading = () => {
   return (
     <div className="flex flex-col lg:flex-row gap-5 justify-between items-start lg:items-center py-6">
       <h2 className="font-extrabold text-2xl sm:text-3xl lg:text-4xl text-gray-800 tracking-tight">
-        WEEKLY DELIGHTS
+        DELIGHTS
       </h2>
       <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed max-w-xl">
         New week, new cravings! Explore our freshly updated special offers designed to tantalize your taste buds.
@@ -58,13 +58,13 @@ const Delights = () => {
       description: 'Crispy tacos with fresh ingredients and authentic flavors.',
     },
     {
-      img: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=250&fit=crop&crop=center',
+      img: '/foodnd/f7.png',
       heading: 'WING WEDNESDAY',
       days: 'Wednesday',
       description: 'Delicious chicken wings with your choice of sauce.',
     },
     {
-      img: 'https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&h=250&fit=crop&crop=center',
+      img: '/foodnd/f1.png',
       heading: 'WEEKEND BRUNCH',
       days: 'Sat & Sun',
       description: 'Perfect brunch experience with mimosas and fresh pastries.',
@@ -86,8 +86,8 @@ const Delights = () => {
             />
           </div>
           <div className="p-5 flex flex-col gap-2">
-            <h3 className="text-xl font-bold text-[#F7BA25]">{option.heading}</h3>
-            <span className="text-sm font-semibold text-[#F7BA25]">{option.days}</span>
+            {/* <h3 className="text-xl font-bold text-[#F7BA25]">{option.heading}</h3> */}
+            {/* <span className="text-sm font-semibold text-[#F7BA25]">{option.days}</span> */}
             <p className="text-sm text-gray-100 leading-relaxed">{option.description}</p>
           </div>
         </div>

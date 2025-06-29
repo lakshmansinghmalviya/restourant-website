@@ -4,7 +4,7 @@ import { useState } from "react";
 const getImageUrls = (): string[] => {
   const urls = [];
   for (let i = 1; i <= 16; i++) {
-    urls.push("/gallary/g" + i + ".jpg");
+    urls.push("/foodnd/f" + i + ".png");
   }
   return urls;
 };
@@ -53,10 +53,11 @@ const Pictures = () => {
               >
                 <img
                   loading="lazy"
-                  className={`h-auto max-w-full rounded-lg cursor-pointer transition-all hover:scale-125 duration-300 ${isClicked
-                      ? "grayscale-0"
-                      : "filter grayscale hover:grayscale-0"
-                    }`}
+                  // className={`h-auto max-w-full rounded-lg cursor-pointer transition-all hover:scale-125 duration-300 ${isClicked
+                  //     ? "grayscale-0"
+                  //     : "filter grayscale hover:grayscale-0"
+                  //   }`}
+                   className= {`h-auto max-w-full rounded-lg cursor-pointer transition-all hover:scale-125 duration-300 grayscale-0`}
                   src={url}
                   alt={`Masonry image ${colIdx * 3 + imgIdx + 1}`}
                 />
